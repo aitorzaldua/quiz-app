@@ -10,8 +10,8 @@ export const QuizApp = () => {
     time:0,
     isLoged: false
   })
-  
-  
+
+
   return (
     <userInfo.Provider value={{user, setUser}}>
       <AppRouter />

@@ -10,17 +10,11 @@ export default function AppRouter() {
     <Router>
       <>
         <Switch>
-
           <Route exact path="/category/" component={QuizRoute}></Route>
-
           <Route exact path="/home" component={Home}></Route>
-
           <Route exact path="/scorelist" component={ScoreList}></Route>
-
           <Route exact path="/" component={Register}></Route>
-
           <Redirect to="/"></Redirect>
-
         </Switch>
       </>
     </Router>

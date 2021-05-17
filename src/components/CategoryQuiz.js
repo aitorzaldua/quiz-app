@@ -6,6 +6,7 @@ import { userInfo } from "../QuizApp";
 import { db } from "../firebase/firebaseConfig";
 import ReactHtmlParser from "react-html-parser";
 import { EndQuizScreen } from "./EndQuizScreen";
+import P from "./P";
 
 export const CategoryQuiz = () => {
   const { user, setUser } = useContext(userInfo);
@@ -57,14 +58,11 @@ export const CategoryQuiz = () => {
 
   return (
     <div className="quiz_screen">
-
       <div className="quizTable">
         <p className="question">{ReactHtmlParser(question)}</p>
-
         <ul className="answers_container">
           {incorrect_answers.map((el, i) => {
             return (
-               
                 <Answers
                   answers={ReactHtmlParser(el)}
                   correct_answer={ReactHtmlParser(correct_answer)}
@@ -72,14 +70,11 @@ export const CategoryQuiz = () => {
                   setScore={setScore}
                   key={i}
                 />
-              
             );
           })}
           </ul>
       </div>
-
       <span className="quiz_screen-counter">{questionsNmbr}/20</span>
-
       {showEnd && <EndQuizScreen user={user} />}
     </div>
   );
